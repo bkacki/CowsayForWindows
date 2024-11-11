@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "CowsayForWindows": {
+      "commandName": "Project",
+      "commandLineArgs": "test"
+    }
+  }
+}
