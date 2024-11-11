@@ -13,13 +13,13 @@ namespace CowsayForWindows
 
         public static void SayMessage(string message)
         {
-            List<string> messageWithBorder = _addBorderToMessage(message);
+            List<string> messageWithBorder = AddBorderToMessage(message);
             foreach (string line in messageWithBorder)
                 Console.WriteLine(line);
-            _showCow();
+            ShowCow();
         }
 
-        private static List<string> _addBorderToMessage(string message)
+        private static List<string> AddBorderToMessage(string message)
         {
             if (string.IsNullOrWhiteSpace(message))
                 throw new ArgumentException("Message can't be empty or whitespace.");
@@ -37,7 +37,7 @@ namespace CowsayForWindows
             }
             else
             {
-                var blocks = _splitStringIntoBlocks(message);
+                var blocks = SplitStringIntoBlocks(message);
                 string upperBorder = " " + new string('_', _blockSize + 2);
                 string bottomBorder = " " + new string('-', _blockSize + 2);
 
@@ -55,7 +55,7 @@ namespace CowsayForWindows
             return messageWithBorder;
         }
 
-        private static List<string> _splitStringIntoBlocks(string str)
+        private static List<string> SplitStringIntoBlocks(string str)
         {
             var blocks = new List<string>();
             var words = str.Split(' ');
@@ -80,7 +80,7 @@ namespace CowsayForWindows
             return blocks;
         }
 
-        private static void _showCow()
+        private static void ShowCow()
         {
             try
             {
