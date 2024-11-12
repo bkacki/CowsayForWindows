@@ -6,9 +6,11 @@ namespace CowsayForWindows
 {
     public static class Cowsay
     {
-        private static readonly string _fileName = "cow.csv";
+        private static Random random => new Random();
+
+        private static readonly List<string> _fileName = new List<string>() { "cow.csv", "bud-frogs.csv", "cheese.csv", "fox.csv", "snowman.csv", "tux.csv" };
         private static readonly string _appDirectory = AppDomain.CurrentDomain.BaseDirectory;
-        private static readonly string _filePath = Path.Combine(_appDirectory, "models", _fileName);
+        private static readonly string _filePath = Path.Combine(_appDirectory, "models", _fileName[random.Next(_fileName.Count)]);
         private static readonly int _blockSize = 40;
 
         public static void SayMessage(string message)
@@ -86,7 +88,7 @@ namespace CowsayForWindows
             {
                 if (!File.Exists(_filePath))
                 {
-                    Console.WriteLine($"File {_fileName} was not found in the application folder.");
+                    Console.WriteLine($"File {_filePath} was not found in the application folder.");
                     return;
                 }
 
