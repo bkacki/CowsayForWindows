@@ -8,7 +8,7 @@ namespace CowsayForWindows
     {
         private static Random random => new Random();
 
-        private static readonly List<string> _fileName = new List<string>() { "cow.csv", "bud-frogs.csv", "cheese.csv", "fox.csv", "snowman.csv", "tux.csv" };
+        private static readonly List<string> _fileName = new List<string>() { "cow.csv", "bud-frogs.csv", "cheese.csv", "fox.csv", "snowman.csv", "tux.csv", "unipony.csv" };
         private static readonly string _appDirectory = AppDomain.CurrentDomain.BaseDirectory;
         private static readonly string _filePath = Path.Combine(_appDirectory, "models", _fileName[random.Next(_fileName.Count)]);
         private static readonly int _blockSize = 40;
