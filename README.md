@@ -32,6 +32,7 @@ CowsayForWindows is a .NET 8 console application that displays a message with a 
 `dotnet run --project CowsayForWindows "Hello, world!"`
 
 Output:
+```
  _______________
 < Hello, world! >
  ---------------
@@ -40,6 +41,7 @@ Output:
             (__)\       )\/\
                 ||----w |
                 ||     ||
+```
 
 
 ## Contributing
